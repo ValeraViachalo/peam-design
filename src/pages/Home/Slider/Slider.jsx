@@ -69,17 +69,17 @@ export default function Slider() {
 
         <div className="slider__images">
           <img
-            src="/public/images/slider/1.webp"
+            src="/images/slider/1.webp"
             alt="slider"
             className="slider__image slider__image-1"
           />
           <img
-            src="/public/images/slider/2.webp"
+            src="/images/slider/2.webp"
             alt="slider"
             className="slider__image slider__image-2"
           />
           <img
-            src="/public/images/slider/3.webp"
+            src="/images/slider/3.webp"
             alt="slider"
             className="slider__image slider__image-3"
           />
