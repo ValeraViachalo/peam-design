@@ -1,8 +1,7 @@
-import FullWidthBg from "@/components/FullWidthBg/FullWidthBg";
 import React from "react";
 import "./Home.scss";
 import { useIsPresent } from "framer-motion";
-import { Transition } from "@/components/Transition/Transition";
+import Slider from "./Slider/Slider";
 
 export default function Home() {
   const isPresent = useIsPresent();
@@ -10,66 +9,59 @@ export default function Home() {
   return (
     <>
       <main className="home">
-        <FullWidthBg
-          classSection="home-section section-1 "
-          url="https://images.unsplash.com/photo-1604079628040-94301bb21b91?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        >
-          <div className="home__content">
+        <div className="hero">
+          <img
+            src="/public/images/hero.webp"
+            alt="hero"
+            className="hero__image"
+          />
+
+          <div className="text">
+            <p className="secondary">Interview</p>
             <h1>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout.
+              <span className="secondary">
+              In conversation with 
+                designer and founder
+                </span>
+              <br />
+              <span className="">
+
+              Andrea Harbeck
+              </span>
             </h1>
           </div>
-        </FullWidthBg>
-        <FullWidthBg
-          classSection="home-section section-2 "
-          url="https://images.unsplash.com/photo-1604076913837-52ab5629fba9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        >
-          <div className="home__content">
-            <h1>Matthias Leidinger</h1>
-            Originally hailing from Austria, Berlin-based photographer Matthias
-            Leindinger is a young creative brimming with talent and ideas. This
-            is a story on the border between reality and imaginary, about the
-            contradictory feelings that the insularity of a rocky, arid, and
-            wild territory provokes”—so French photographer Clément Chapillon
-            describes his latest highly captivating project Les rochers fauves
-            (French for ‘The tawny rocks’). Though he views photography as a
-            medium for storytelling, Zissou’s images don’t insist on a
-            narrative. Both crisp and ethereal, they’re encoded with an
-            ambiguity—a certain tension—that lets the viewer find their own
-            story within them.
+        </div>
+        <div className="interview">
+          <div className="interview__question-1 interview__question">
+            <h2>
+              In your own words, who or what is .PEAM?
+            </h2>
+            <p>
+              <span className="author secondary">
+                A.H.
+              </span>
+              .PEAM stands for interior consulting, interior concepts and a&nbsp;distinct living experience. And, for our own interior line; my collection includes steel and wooden furniture as well as home accessories made by&nbsp;craftsmen and artists of the Bavaria and South Tyrol regions. I&nbsp;distribute&nbsp;them through my shop soon, along with other products from select manufacturers such as Bauhaus ceramics by&nbsp;Hedwig Bollhagen or design classics by&nbsp;Niels Otto Møller.
+            </p>
+            <img src="/public/images/interview-1.webp" alt="interview-1" className="interview__image"/>
           </div>
-        </FullWidthBg>
-        <FullWidthBg
-          classSection="home-section section-3"
-          id="clement"
-          url="https://images.unsplash.com/photo-1550275994-2bc88dc68637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTd8M1JwNl9KdnJtU1l8fGVufDB8fHx8fA%3D%3D"
-        >
-          <div className="home__content">
-            <h1>Clément Chapillon</h1>
-            Though he views photography as a medium for storytelling, Zissou’s
-            images don’t insist on a narrative. Both crisp and ethereal, they’re
-            encoded with an ambiguity—a certain tension—that lets the viewer
-            find their own story within them.
+
+          <div className="interview__question-2 interview__question">
+            <h2>
+              That means .PEAM also stands for a&nbsp;very specific style?
+            </h2>
+            <p>
+              <span className="author secondary">
+                A.H.
+              </span>
+              Yes, absolutely — but for a&nbsp;style that is rather felt than explained. The core philosophy that shapes all our commissioned work and pieces is a&nbsp;concept of calmness. With the colors and materials we&nbsp;use, we&nbsp;create a&nbsp;contrast to&nbsp;our hectic and digital environment. Thus, .PEAM stands for sustainable, natural design, and an interior that creates a&nbsp;platform for people to&nbsp;flourish. Good design should step back and not push itself into the foreground. And because it should still preserve value years later, I&nbsp;work with materials that age well: Wood, leather, steel, and many old and new classics that aren’t as well known yet, but often have a&nbsp;great story.
+            </p>
+            <img src="/public/images/interview-2.webp" alt="interview-1" className="interview__image"/>
           </div>
-        </FullWidthBg>
-        <FullWidthBg
-          classSection="home-section section-4 "
-          url="https://images.unsplash.com/photo-1533158326339-7f3cf2404354?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8"
-        >
-          <div className="home__content">
-            <h1>Mathias Svold and Ulrik Hasemann</h1>
-            Dutch photographer Mark Rammers has shared with IGNANT the first
-            chapter of his latest photographic project, ‘all over
-            again’—captured while in residency at Hektor, an old farm in Los
-            Valles, Lanzarote. Titled ‘Beginnings’, the mesmerizing collection
-            of images is a visual and meditative journey into the origins of
-            regrets and the uncertainty of stepping into new unknowns.
-          </div>
-        </FullWidthBg>
+        </div>
+
+        <Slider />
       </main>
 
-      <Transition isPresent={isPresent} />
     </>
   );
 }

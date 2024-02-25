@@ -1,12 +1,11 @@
 @import "./mixins";
 
 %h1 {
-  font-family: Formula-Condensed, sans-serif;
+  font-family: Schnyder, sans-serif;
   font-size: 2.8vw;
   font-style: normal;
   font-weight: bold;
   line-height: 142%;
-  text-transform: uppercase;
   letter-spacing: normal;
 
   @include mq() {
@@ -15,11 +14,10 @@
 }
 
 .big-text {
-  font-family: Formula-Condensed, sans-serif;
+  font-family: Schnyder, sans-serif;
   font-size: 4.7vw;
   font-style: bold;
   line-height: 90%;
-  text-transform: uppercase;
   letter-spacing: normal;
 
   @include mq() {
@@ -28,7 +26,7 @@
 }
 
 %h2 {
-  font-family: Formula-Condensed, sans-serif;
+  font-family: Schnyder, sans-serif;
   font-size: 2vw;
   font-style: bold;
   font-weight: normal;
@@ -41,23 +39,30 @@
 }
 
 %body-text {
-  font-family: Roboto, sans-serif;
-  font-size: 1.5vw;
+  font-family: "HelveticaNeueCyr", sans-serif;
+  font-size: 1vw;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 140%;
-  letter-spacing: -0.06vw;
-  
+  letter-spacing: -0.02vw;
+
   @include mq() {
     letter-spacing: -0.4vw;
     font-size: 4.7vw;
   }
 }
 
+.body-text-secondary {
+  @extend %body-text;
+  font-family: Schnyder, sans-serif;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
 %link {
   @extend %body-text;
   font-weight: bold;
-
 }
 
 .bold {
@@ -78,4 +83,8 @@ h2 {
 
 a {
   @extend %link;
+}
+
+.secondary {
+  color: $g-60;
 }

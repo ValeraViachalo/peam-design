@@ -2,14 +2,13 @@
 
 .header {
   align-items: center;
-  background-color: #8e8e8e2d;
-  backdrop-filter: blur(1vw);
+  
   display: flex;
   flex-direction: row;
-  height: 5vw;
+  height: 4vw;
   justify-content: space-between;
   z-index: 10;
-  padding: 0 6.5vw;
+  padding: 1vw 6.5vw 0;
   position: fixed;
   top: 0;
   left: 0;

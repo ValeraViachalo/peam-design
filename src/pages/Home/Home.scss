@@ -1,15 +1,54 @@
 .home{
-  &-section {
+  .hero {
+    width: 100vw;
+    height: 120lvh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding-right: 2vw;
+
+    &__image {
+      height: 100%;
+      width: 40%;
+      object-fit: cover;
+    }
+
+    .text {
+      width: 30%;
+      margin: 0 auto;
+    }
   }
-  
-  &__content{
-    border: 1px solid;
-    width: 70%;
-    margin: 0 auto;
-    padding: 10vw;
-    text-align: center;
+
+  .interview {
+    margin-top: 10lvh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    .author {
+      margin-right: 2vw;
+    }
+
+    &__question {
+      display: flex;
+      flex-direction: column;
+      gap: 1vw;
+      
+      &-1 {
+        width: 30%;
+      }
+      
+      &-2 {
+        width: 40%;
+        margin-top: 30vw;
+      }
+    }
+
+    &__image {
+      width: 50%;
+      height: 20vw;
+      object-position: 50% 100%;
+      margin: 1vw auto 0;
+    }
   }
 }

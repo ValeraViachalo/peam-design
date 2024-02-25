@@ -23,7 +23,7 @@ export const ScrollProvider: React.FC<ScrollProviderProps> = ({ children }) => {
   const scrollTo: ScrollToFunction = (e, currentLink) => {
     e.preventDefault();
     locomotiveScroll.current.scrollTo(currentLink, {
-      duration: 1.7,
+      duration: 2,
       easing: (x: number) => easeInOutExpo(x),
     });
   };
@@ -67,7 +67,7 @@ export const ScrollProvider: React.FC<ScrollProviderProps> = ({ children }) => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
       locomotiveScroll.current = new LocomotiveScroll({
         lenisOptions: {
-          duration: 0.7,
+          duration: 1.4,
           lerp: 0.1,
           smoothWheel: true,
           wheelMultiplier: 2,

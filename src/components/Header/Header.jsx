@@ -1,37 +1,34 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Logo } from "../Logo/Logo";
-import linksList from "@/data/links.json";
 
 import "./Header.scss";
-import { Nav } from "../Nav/Nav";
-import AnchorLink from "../AnchorLink/AnchorLink";
-import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 export const Header = () => {
+  const headerRef = useRef();
+  const logoRef = useRef();
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    gsap.to(logoRef.current, {
+      scale: .7,
+      yPercent: -40,
+      scrollTrigger: {
+        trigger: headerRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+      }
+    })
+  })
+
   return (
-    <header className="header">
-      <Logo className="header__logo" />
-
-      <div className="header__wrapper">
-        <ul className="header__list-links">
-          {linksList.map((currLink, index) => (
-            <li key={`header_link_${index}`}>
-              {currLink.isAnchor ? (
-                <AnchorLink className="header__link" toSection={currLink.link}>
-                  <span>{currLink.name}</span>
-                </AnchorLink>
-              ) : (
-                <Link className="header__link" to={currLink.link}>
-                  <span>{currLink.name}</span>
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="header__nav">
-        <Nav />
+    <header className="header" ref={headerRef}>
+      <div ref={logoRef} className="header__logo">
+        <Logo className="header__logo" />
       </div>
     </header>
   );

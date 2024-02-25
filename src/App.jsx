@@ -1,19 +1,18 @@
 import React from "react";
 import { useLocation, useRoutes } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { AnimatePresence } from "framer-motion";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import { ScrollProvider } from "./helpers/scrollProvider";
-import { Header } from "@C/Header/Header"
+import { Header } from "@C/Header/Header";
 import Home from "./pages/Home/Home";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import Blog from "./pages/Blog/Blog";
-import BlogDetails from "./pages/BlogDetails/BlogDetails";
+import Slider from "./pages/Home/Slider/Slider";
+import { AnimatePresence } from "framer-motion";
+import Footer from "./components/Footer/Footer";
 
 const queryC = new QueryClient();
 
 function App() {
-
   const element = useRoutes([
     {
       path: "/",
@@ -22,19 +21,19 @@ function App() {
           index: true,
           element: <Home />,
         },
-        {
-          path: 'blog',
-          element: <Blog />,
-        },
-        {
-          path: 'blogs',
-          children: [
-            {
-              path: ":blogId?",
-              element: <BlogDetails />,
-            },
-          ],
-        }
+        // {
+        //   path: 'blog',
+        //   element: <Blog />,
+        // },
+        // {
+        //   path: 'blogs',
+        //   children: [
+        //     {
+        //       path: ":blogId?",
+        //       element: <BlogDetails />,
+        //     },
+        //   ],
+        // }
       ],
     },
     {
@@ -50,14 +49,14 @@ function App() {
       <main>
         <ScrollProvider>
           <Header />
-          
           <AnimatePresence mode="wait" initial={false}>
-              {React.cloneElement(element, { key: location.pathname })}
+            {React.cloneElement(element, { key: location.pathname })}
           </AnimatePresence>
+          <Footer />
         </ScrollProvider>
       </main>
     </QueryClientProvider>
-  )
+  );
 }
 
-export default App
+export default App;
