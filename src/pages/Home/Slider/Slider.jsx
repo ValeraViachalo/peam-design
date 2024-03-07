@@ -22,7 +22,7 @@ export default function Slider() {
   useGSAP(() => {
     if ((sliderRef, wrapperRef)) {
       gsap.to(sliderRef.current, {
-        x: widthSlider,
+        xPercent: -50,
         duration: 3,
         ease: "none",
         scrollTrigger: {

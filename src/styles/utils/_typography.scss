@@ -8,9 +8,6 @@
   line-height: 142%;
   letter-spacing: normal;
 
-  @include mq() {
-    font-size: 9.4vw;
-  }
 }
 
 .big-text {
@@ -20,9 +17,6 @@
   line-height: 90%;
   letter-spacing: normal;
 
-  @include mq() {
-    font-size: 11vw;
-  }
 }
 
 %h2 {
@@ -32,10 +26,6 @@
   font-weight: normal;
   line-height: normal;
   letter-spacing: normal;
-
-  @include mq() {
-    font-size: 6.4vw;
-  }
 }
 
 %body-text {
@@ -45,11 +35,6 @@
   font-weight: 300;
   line-height: 140%;
   letter-spacing: -0.02vw;
-
-  @include mq() {
-    letter-spacing: -0.4vw;
-    font-size: 4.7vw;
-  }
 }
 
 .body-text-secondary {
